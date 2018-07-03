@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: dd0e2a0351380456db1d13054b4563ac
+timeCreated: 1530618048
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: attack.b
+    100002: attack.b_end
+    100004: attack.r
+    100006: attack.r_end
+    100008: ball
+    100010: Bone
+    100012: Bone_end
+    100014: cube1.r
+    100016: cube1.r_end
+    100018: cube10.b
+    100020: cube10.b_end
+    100022: cube10.r
+    100024: cube10.r_end
+    100026: cube2.b
+    100028: cube2.b_end
+    100030: cube2.r
+    100032: cube2.r_end
+    100034: cube3.b
+    100036: cube3.b_end
+    100038: cube3.r
+    100040: cube3.r_end
+    100042: cube4.b
+    100044: cube4.b_end
+    100046: cube4.r
+    100048: cube4.r_end
+    100050: cube5.b
+    100052: cube5.b_end
+    100054: cube5.r
+    100056: cube5.r_end
+    100058: cube6.b
+    100060: cube6.b_end
+    100062: cube6.r
+    100064: cube6.r_end
+    100066: cube7.b
+    100068: cube7.b_end
+    100070: cube7.r
+    100072: cube7.r_end
+    100074: cube8.b
+    100076: cube8.b_end
+    100078: cube8.r
+    100080: cube8.r_end
+    100082: cube9.b
+    100084: cube9.b_end
+    100086: cube9.r
+    100088: cube9.r_end
+    100090: defend.b
+    100092: defend.b_end
+    100094: defend.r
+    100096: defend.r_end
+    100098: end wall
+    100100: goal edge.l
+    100102: goal edge.r
+    100104: goal.b
+    100106: goal.b_end
+    100108: goal.r
+    100110: goal.r_end
+    100112: handle.a.b
+    100114: handle.a.r
+    100116: handle.d.b
+    100118: handle.d.r
+    100120: handle.g.b
+    100122: handle.g.r
+    100124: handle.m.b
+    100126: handle.m.r
+    100128: handles rig
+    100130: hole edge.l
+    100132: hole edge.r
+    100134: midfield.b
+    100136: midfield.b_end
+    100138: midfield.r
+    100140: midfield.r_end
+    100142: pitch
+    100144: player.a.b
+    100146: player.a.r
+    100148: player.d.b
+    100150: player.d.r
+    100152: player.g.b
+    100154: player.g.r
+    100156: player.m.b
+    100158: player.m.r
+    100160: score bar.b
+    100162: score bar.r
+    100164: score cube1.b
+    100166: score cube1.r
+    100168: score cube10.b
+    100170: score cube10.r
+    100172: score cube2.b
+    100174: score cube2.r
+    100176: score cube3.b
+    100178: score cube3.r
+    100180: score cube4.b
+    100182: score cube4.r
+    100184: score cube5.b
+    100186: score cube5.r
+    100188: score cube6.b
+    100190: score cube6.r
+    100192: score cube7.b
+    100194: score cube7.r
+    100196: score cube8.b
+    100198: score cube8.r
+    100200: score cube9.b
+    100202: score cube9.r
+    100204: side rings
+    100206: sides
+    100208: table legs
+    100210: //RootNode
+    100212: wall rings.a.b
+    100214: wall rings.a.r
+    100216: wall rings.d.b
+    100218: wall rings.d.r
+    100220: wall rings.g.b
+    100222: wall rings.g.r
+    100224: wall rings.m.b
+    100226: wall rings.m.r
+    400000: attack.b
+    400002: attack.b_end
+    400004: attack.r
+    400006: attack.r_end
+    400008: ball
+    400010: Bone
+    400012: Bone_end
+    400014: cube1.r
+    400016: cube1.r_end
+    400018: cube10.b
+    400020: cube10.b_end
+    400022: cube10.r
+    400024: cube10.r_end
+    400026: cube2.b
+    400028: cube2.b_end
+    400030: cube2.r
+    400032: cube2.r_end
+    400034: cube3.b
+    400036: cube3.b_end
+    400038: cube3.r
+    400040: cube3.r_end
+    400042: cube4.b
+    400044: cube4.b_end
+    400046: cube4.r
+    400048: cube4.r_end
+    400050: cube5.b
+    400052: cube5.b_end
+    400054: cube5.r
+    400056: cube5.r_end
+    400058: cube6.b
+    400060: cube6.b_end
+    400062: cube6.r
+    400064: cube6.r_end
+    400066: cube7.b
+    400068: cube7.b_end
+    400070: cube7.r
+    400072: cube7.r_end
+    400074: cube8.b
+    400076: cube8.b_end
+    400078: cube8.r
+    400080: cube8.r_end
+    400082: cube9.b
+    400084: cube9.b_end
+    400086: cube9.r
+    400088: cube9.r_end
+    400090: defend.b
+    400092: defend.b_end
+    400094: defend.r
+    400096: defend.r_end
+    400098: end wall
+    400100: goal edge.l
+    400102: goal edge.r
+    400104: goal.b
+    400106: goal.b_end
+    400108: goal.r
+    400110: goal.r_end
+    400112: handle.a.b
+    400114: handle.a.r
+    400116: handle.d.b
+    400118: handle.d.r
+    400120: handle.g.b
+    400122: handle.g.r
+    400124: handle.m.b
+    400126: handle.m.r
+    400128: handles rig
+    400130: hole edge.l
+    400132: hole edge.r
+    400134: midfield.b
+    400136: midfield.b_end
+    400138: midfield.r
+    400140: midfield.r_end
+    400142: pitch
+    400144: player.a.b
+    400146: player.a.r
+    400148: player.d.b
+    400150: player.d.r
+    400152: player.g.b
+    400154: player.g.r
+    400156: player.m.b
+    400158: player.m.r
+    400160: score bar.b
+    400162: score bar.r
+    400164: score cube1.b
+    400166: score cube1.r
+    400168: score cube10.b
+    400170: score cube10.r
+    400172: score cube2.b
+    400174: score cube2.r
+    400176: score cube3.b
+    400178: score cube3.r
+    400180: score cube4.b
+    400182: score cube4.r
+    400184: score cube5.b
+    400186: score cube5.r
+    400188: score cube6.b
+    400190: score cube6.r
+    400192: score cube7.b
+    400194: score cube7.r
+    400196: score cube8.b
+    400198: score cube8.r
+    400200: score cube9.b
+    400202: score cube9.r
+    400204: side rings
+    400206: sides
+    400208: table legs
+    400210: //RootNode
+    400212: wall rings.a.b
+    400214: wall rings.a.r
+    400216: wall rings.d.b
+    400218: wall rings.d.r
+    400220: wall rings.g.b
+    400222: wall rings.g.r
+    400224: wall rings.m.b
+    400226: wall rings.m.r
+    2100000: metal
+    2100002: black plastic
+    2100004: player red
+    2100006: player blue
+    2100008: red plastic
+    2100010: blue plastic
+    2100012: ball
+    2100014: pitch
+    2100016: wood
+    2300000: ball
+    2300002: end wall
+    2300004: goal edge.l
+    2300006: goal edge.r
+    2300008: handle.a.b
+    2300010: handle.a.r
+    2300012: handle.d.b
+    2300014: handle.d.r
+    2300016: handle.g.b
+    2300018: handle.g.r
+    2300020: handle.m.b
+    2300022: handle.m.r
+    2300024: hole edge.l
+    2300026: hole edge.r
+    2300028: pitch
+    2300030: player.a.b
+    2300032: player.a.r
+    2300034: player.d.b
+    2300036: player.d.r
+    2300038: player.g.b
+    2300040: player.g.r
+    2300042: player.m.b
+    2300044: player.m.r
+    2300046: score bar.b
+    2300048: score bar.r
+    2300050: score cube1.b
+    2300052: score cube1.r
+    2300054: score cube10.b
+    2300056: score cube10.r
+    2300058: score cube2.b
+    2300060: score cube2.r
+    2300062: score cube3.b
+    2300064: score cube3.r
+    2300066: score cube4.b
+    2300068: score cube4.r
+    2300070: score cube5.b
+    2300072: score cube5.r
+    2300074: score cube6.b
+    2300076: score cube6.r
+    2300078: score cube7.b
+    2300080: score cube7.r
+    2300082: score cube8.b
+    2300084: score cube8.r
+    2300086: score cube9.b
+    2300088: score cube9.r
+    2300090: side rings
+    2300092: sides
+    2300094: table legs
+    2300096: wall rings.a.b
+    2300098: wall rings.a.r
+    2300100: wall rings.d.b
+    2300102: wall rings.d.r
+    2300104: wall rings.g.b
+    2300106: wall rings.g.r
+    2300108: wall rings.m.b
+    2300110: wall rings.m.r
+    3300000: ball
+    3300002: end wall
+    3300004: goal edge.l
+    3300006: goal edge.r
+    3300008: handle.a.b
+    3300010: handle.a.r
+    3300012: handle.d.b
+    3300014: handle.d.r
+    3300016: handle.g.b
+    3300018: handle.g.r
+    3300020: handle.m.b
+    3300022: handle.m.r
+    3300024: hole edge.l
+    3300026: hole edge.r
+    3300028: pitch
+    3300030: player.a.b
+    3300032: player.a.r
+    3300034: player.d.b
+    3300036: player.d.r
+    3300038: player.g.b
+    3300040: player.g.r
+    3300042: player.m.b
+    3300044: player.m.r
+    3300046: score bar.b
+    3300048: score bar.r
+    3300050: score cube1.b
+    3300052: score cube1.r
+    3300054: score cube10.b
+    3300056: score cube10.r
+    3300058: score cube2.b
+    3300060: score cube2.r
+    3300062: score cube3.b
+    3300064: score cube3.r
+    3300066: score cube4.b
+    3300068: score cube4.r
+    3300070: score cube5.b
+    3300072: score cube5.r
+    3300074: score cube6.b
+    3300076: score cube6.r
+    3300078: score cube7.b
+    3300080: score cube7.r
+    3300082: score cube8.b
+    3300084: score cube8.r
+    3300086: score cube9.b
+    3300088: score cube9.r
+    3300090: side rings
+    3300092: sides
+    3300094: table legs
+    3300096: wall rings.a.b
+    3300098: wall rings.a.r
+    3300100: wall rings.d.b
+    3300102: wall rings.d.r
+    3300104: wall rings.g.b
+    3300106: wall rings.g.r
+    3300108: wall rings.m.b
+    3300110: wall rings.m.r
+    4300000: handle.g.r
+    4300002: wall rings.g.r
+    4300004: player.g.r
+    4300006: handle.d.r
+    4300008: wall rings.d.r
+    4300010: player.d.r
+    4300012: handle.m.r
+    4300014: wall rings.m.r
+    4300016: player.m.r
+    4300018: handle.a.r
+    4300020: wall rings.a.r
+    4300022: player.a.r
+    4300024: handle.g.b
+    4300026: wall rings.g.b
+    4300028: player.g.b
+    4300030: handle.d.b
+    4300032: wall rings.d.b
+    4300034: player.d.b
+    4300036: handle.m.b
+    4300038: wall rings.m.b
+    4300040: player.m.b
+    4300042: handle.a.b
+    4300044: wall rings.a.b
+    4300046: player.a.b
+    4300048: score cube1.r
+    4300050: score cube2.r
+    4300052: score cube3.r
+    4300054: score cube4.r
+    4300056: score cube5.r
+    4300058: score cube6.r
+    4300060: score cube7.r
+    4300062: score cube8.r
+    4300064: score cube9.r
+    4300066: score cube10.r
+    4300068: score cube2.b
+    4300070: score cube3.b
+    4300072: score cube4.b
+    4300074: score cube5.b
+    4300076: score cube6.b
+    4300078: score cube7.b
+    4300080: score cube8.b
+    4300082: score cube9.b
+    4300084: score cube10.b
+    4300086: score cube1.b
+    4300088: ball
+    4300090: table legs
+    4300092: hole edge.l
+    4300094: hole edge.r
+    4300096: goal edge.r
+    4300098: goal edge.l
+    4300100: score bar.b
+    4300102: score bar.r
+    4300104: side rings
+    4300106: pitch
+    4300108: end wall
+    4300110: sides
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

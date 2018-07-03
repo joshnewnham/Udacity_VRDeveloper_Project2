@@ -5,6 +5,12 @@ using System.Net.NetworkInformation;
 
 public class Player : MonoBehaviour
 {
+    #region Events 
+
+    public delegate void DidMove(Player caller, Vector3 position);
+    public DidMove OnDidMove= delegate { };
+
+    #endregion 
 
     public Transform cameraTransform;
 
@@ -109,7 +115,9 @@ public class Player : MonoBehaviour
             yield return null;
         }
         TeleportEffect.maskValue = 0.0f; 
-        TeleportEffect.maskColorAlpha = 0.0f; 
+        TeleportEffect.maskColorAlpha = 0.0f;
+
+        OnDidMove(this, transform.position);
     }
 
     /** Update teleport target */ 

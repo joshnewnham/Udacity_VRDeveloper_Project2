@@ -245,6 +245,9 @@
     <Reference Include="Vuforia.UnityExtensions">
       <HintPath>/Applications/Unity/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets/Watson/Plugins/websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
     </Reference>
@@ -257,9 +260,6 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>/Users/joshua.newnham/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>Assets/Watson/Plugins/websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -268,6 +268,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game\Scripts\Cabnet.cs" />
     <Compile Include="Assets\Game\Scripts\Player.cs" />
     <Compile Include="Assets\Game\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Game\Scripts\Target.cs" />
