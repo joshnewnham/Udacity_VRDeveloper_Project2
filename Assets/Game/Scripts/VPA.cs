@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Text;
 using IBM.Watson.DeveloperCloud.Services.TextToSpeech.v1;
+using UnityEditor;
 
 public class VPA : MonoBehaviour
 {
@@ -89,8 +90,7 @@ public class VPA : MonoBehaviour
     {
         if (CurrentState == State.Undefined)
         {
-            //CurrentState = State.IntroMoveTowardsPlayer;
-            CurrentState = State.Attentive;
+            CurrentState = State.IntroMoveTowardsPlayer;
         }
 
         if (followingPlayer)
@@ -99,7 +99,7 @@ public class VPA : MonoBehaviour
         } 
         else
         {
-            if(CurrentState == State.Attentive || CurrentState == State.Presenting){
+            if(CurrentState == State.Attentive){
                 LookAtPlayer(); 
             }    
         }
@@ -231,29 +231,88 @@ public class VPA : MonoBehaviour
 
             yield return StartCoroutine(WaitForEyeContact());
 
-            this.AddSpeechBubble(text, 5);
+            // Virtual Reality is an ideal medium for socialising; some of the key characteristics are
+            var wordsPerSecond = 5.0f / 10.0f;
+            var words = text.Split(' ').Length;
+            var delay = wordsPerSecond * words;
+
+            this.AddSpeechBubble(text, delay);
 
             GetComponent<GvrAudioSource>().PlayOneShot(audioClip);
 
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(delay+0.5f);
         }
+
+        CurrentState = State.Attentive;
     }
 
+    /// <summary>
+    /// Move into front of the user to present material associated with the 
+    /// selected cabnet 
+    /// </summary>
+    /// <returns>The into position.</returns>
     IEnumerator MoveIntoPosition()
     {
-        if (CurrentState != State.Presenting)
+        if (CurrentState == State.Presenting)
         {
-            
+            const float offsetDistance = 2.5f;
+
+            var direction = (selectedCabnet.transform.position - player.transform.position).normalized;
+            direction.y = 0; 
+            var targetPosition = selectedCabnet.transform.position + direction * offsetDistance;
+            targetPosition.y = this.transform.position.y; 
+
+            {
+                // Rotate to look at destination 
+                while (true)
+                {
+                    Vector3 previousForward = transform.forward; 
+
+                    LookAt(targetPosition);
+
+                    var changeInAngle = Vector3.Angle(previousForward, transform.forward);
+
+                    if (changeInAngle < 0.01f)
+                    {
+                        break; 
+                    }
+                    yield return null;
+                }
+            }
+            {
+                // Move into position 
+                while ((this.transform.position - targetPosition).magnitude > 0.05f)
+                {
+                    var targetDirection = (targetPosition - transform.position).normalized;
+                    transform.position += targetDirection * translationSpeed * Time.deltaTime;
+                    yield return null;
+                }
+            }
+
+            {                
+                // Rotate to face the player 
+                while (true)
+                {
+                    Vector3 previousForward = transform.forward;
+
+                    LookAt(player.transform.position);
+
+                    var changeInAngle = Vector3.Angle(previousForward, transform.forward);
+
+                    if (changeInAngle < 0.01f)
+                    {
+                        break;
+                    }
+                    yield return null;
+                }
+            }
+
         }
-
-        // move into position 
-
-        // rotate to face the player 
-        yield return null;
     }
 
     void Player_OnDidMove(Player caller, Vector3 position)
     {
+        // Exit Presenting state (if in) 
         if (CurrentState == State.Presenting)
         {
             CurrentState = State.Attentive;
@@ -268,8 +327,6 @@ public class VPA : MonoBehaviour
         var distance = direction.magnitude;
 
         const float followPadding = 1;
-
-        Debug.Log(distance); 
 
         // close enough? 
         if (Math.Abs(distance - followDistance) <= followPadding)
@@ -291,10 +348,13 @@ public class VPA : MonoBehaviour
     }
 
     void LookAtPlayer(){
-        var direction = (player.transform.position - transform.position);
+        LookAt(player.transform.position);
+    }
+
+    void LookAt(Vector3 target){
+        var direction = (target - transform.position);
         var distance = direction.magnitude;
 
-        // rotate towards the player 
         direction.y = 0;
 
         Vector3 newDir = Vector3.RotateTowards(transform.forward, direction.normalized, rotationSpeed, 0.0f);

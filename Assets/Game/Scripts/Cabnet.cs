@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Cabnet : MonoBehaviour {
 
@@ -10,6 +11,9 @@ public class Cabnet : MonoBehaviour {
     public Selected OnSelected= delegate { };
 
     #endregion 
+
+    [Tooltip("Min distance the user needs to be for this to be selected")]
+    public float selectDistanceThreshold = 2.5f; 
 
     public string[] summaryDialog;
 
@@ -27,6 +31,14 @@ public class Cabnet : MonoBehaviour {
 	}
 
     public void SelectCabnet(){
+        var distanceToPlayer = (SceneManager.SharedInstance.player.transform.position - this.transform.position).magnitude;
+
+        Debug.LogFormat("Distance to player {0}", distanceToPlayer);
+
+        if(distanceToPlayer > selectDistanceThreshold){
+            return; // ignore 
+        }
+
         OnSelected(this); 
     }
 }
