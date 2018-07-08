@@ -7,8 +7,8 @@ public class SceneManager : MonoBehaviour
 
     #region Events 
 
-    public delegate void CabnetSelected(Cabnet caller);
-    public CabnetSelected OnCabnetSelected = delegate { };
+    public delegate void ExhibitSelected(Exhibit caller);
+    public ExhibitSelected OnExhibitSelected = delegate { };
 
     #endregion 
 
@@ -63,10 +63,10 @@ public class SceneManager : MonoBehaviour
     {
         virtualPersonalAssistant.OnStateChanged += VirtualPersonalAssistant_OnStateChanged;
 
-        var cabnets = FindObjectsOfType<Cabnet>();
-        foreach (var cabnet in cabnets)
+        var exhibits = FindObjectsOfType<Exhibit>();
+        foreach (var exhibit in exhibits)
         {
-            cabnet.OnSelected += Cabnet_OnSelected;
+            exhibit.OnSelected += Exhibit_OnSelected;
         }
     }
 
@@ -85,9 +85,9 @@ public class SceneManager : MonoBehaviour
 
     #region Cabnet handler
 
-    void Cabnet_OnSelected(Cabnet caller)
+    void Exhibit_OnSelected(Exhibit caller)
     {
-        OnCabnetSelected(caller); 
+        OnExhibitSelected(caller); 
     }
 
     #endregion 

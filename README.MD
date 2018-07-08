@@ -77,20 +77,24 @@ Although not a comprehensive survey of the exiting Social VR market; it does hig
 In the next second we introduce the project and then walk through the journey of creating it. 
 
 # VR Experience 
-Night at the Museum is an environment modelled (as the name suggests) as a, somewhat, traditional museum where artifacts have been put on display allowing the user to explore and investigate anything that interests them.  
+Night at the Museum is an environment modelled (as the name suggests) as a, somewhat, traditional museum where exhibits have been put on display allowing the user to explore and investigate anything that interests them.  
 
-A virtual avatar (assistant) has been used to help introduce the user to the environment and provide a mechanism for relaying the details of each artifact. When the user first enters the environment **Exe**, the virtual avatar, introduces herself and explains how the user navigates around the environment and interacts with the artifacts. Once the introductions are complete; *Exe* follows the user as they navigate themselves around the environment and re-engages with them only when prompted to describe the details of the selected artifact.  
+A virtual avatar (assistant) has been used to help introduce the user to the environment and provide a mechanism for relaying the details of each artifact. When the user first enters the environment **Exe**, the virtual avatar, introduces herself and explains how the user navigates around the environment and interacts with the exhibit. Once the introductions are complete; *Exe* follows the user as they navigate themselves around the environment and re-engages with them only when prompted to describe the details of the selected exhibit.  
 
-The artifacts of the environment are metaphors used to describe the types of social applications currently out in the market; they include: 
+There are two types of (interactive) exhibits embedded in the environment. First here are two murals advertising two well known Social VR platforms; **Second Life** and **Facebook Spaces**.    
+The other type of exhibits are artifacts embedded in the environment and offer metaphors used to describe the types of social applications currently out in the market; they include: 
 - Travel 
 - Gaming 
 - Viewing  
 
-Finally another artifact used to intoduce some general principles of **Social VR**.  
-Each artifact is associated with a brief extract which is communicated via voice and text via **Exe**. The figure fly-thru below shows the final version. 
+Finally another artifact is used to intoduce some general principles of **Social VR**.  
+
+Each exhibit is associated with a brief extract which is communicated via voice and text via **Exe**. The figure fly-thru below shows the final version. 
 
 <a href="https://www.youtube.com/embed/qWzti4JNCyE?ecver=1" target="_blank"><img src="report_images/image_08.jpg"
 alt="Fly-thru" border="0" /></a>
+
+**NB:** *Either click on the image to see the fly-thru or click [here](https://www.youtube.com/embed/qWzti4JNCyE?ecver=1)*
 
 Now we have a concrete idea of what was developed; let's explore how it was developed. 
 
@@ -122,7 +126,11 @@ Luckily due to the thriving Unity community I managed to find something very sim
 
 The base was kept but contents simplified just to how the items I wanted to include. 
 
-The following image shows the artifacts that were used; along with their related **social VR theme**. 
+The following image shows the murals embedded in the environment, where-by the user can engage with by *tapping* on them. 
+
+<img src="report_images/image_16.png" width="500px" /> 
+
+The next image shows the second type of exhibit embedded in the environment - the artifacts (or cabnets). 
 
 <img src="report_images/image_13.png" width="500px" /> 
 

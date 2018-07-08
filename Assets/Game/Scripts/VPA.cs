@@ -43,7 +43,7 @@ public class VPA : MonoBehaviour
     /** Flag indiciating that we're currently pursuing the player */
     private bool followingPlayer = false;
 
-    private Cabnet selectedCabnet = null; 
+    private Exhibit selectedExhibit = null; 
 
     public string[] introDialog = {
             "Welcome to the Night at the Museum",
@@ -64,7 +64,7 @@ public class VPA : MonoBehaviour
             return _state;
         }
         set
-        {
+        {            
             var oldState = _state;
             _state = value;
 
@@ -82,7 +82,7 @@ public class VPA : MonoBehaviour
 
         player.OnDidMove += Player_OnDidMove;
 
-        SceneManager.SharedInstance.OnCabnetSelected += SharedInstance_OnCabnetSelected;
+        SceneManager.SharedInstance.OnExhibitSelected += SharedInstance_OnCabnetSelected;
     }
 
     // Update is called once per frame
@@ -91,6 +91,7 @@ public class VPA : MonoBehaviour
         if (CurrentState == State.Undefined)
         {
             CurrentState = State.IntroMoveTowardsPlayer;
+            //CurrentState = State.Attentive;
         }
 
         if (followingPlayer)
@@ -113,6 +114,8 @@ public class VPA : MonoBehaviour
         }
 
         Debug.LogFormat("State changed from {0} to {1}", from, to);
+
+        StopAllCoroutines(); 
 
         switch (to)
         {
@@ -221,13 +224,13 @@ public class VPA : MonoBehaviour
     IEnumerator PresentingState(){
         yield return StartCoroutine(MoveIntoPosition());
 
-        for (var idx = 0; idx < selectedCabnet.summaryDialog.Length; idx++){
+        for (var idx = 0; idx < selectedExhibit.summaryDialog.Length; idx++){
             if(CurrentState != State.Presenting){
                 break; 
             }
 
-            var text = selectedCabnet.summaryDialog[idx];
-            var audioClip = selectedCabnet.summaryAudio[idx];
+            var text = selectedExhibit.summaryDialog[idx];
+            var audioClip = selectedExhibit.summaryAudio[idx];
 
             yield return StartCoroutine(WaitForEyeContact());
 
@@ -255,12 +258,7 @@ public class VPA : MonoBehaviour
     {
         if (CurrentState == State.Presenting)
         {
-            const float offsetDistance = 2.5f;
-
-            var direction = (selectedCabnet.transform.position - player.transform.position).normalized;
-            direction.y = 0; 
-            var targetPosition = selectedCabnet.transform.position + direction * offsetDistance;
-            targetPosition.y = this.transform.position.y; 
+            var targetPosition = GetPresentingPosition(); 
 
             {
                 // Rotate to look at destination 
@@ -308,6 +306,23 @@ public class VPA : MonoBehaviour
             }
 
         }
+    }
+
+    Vector3 GetPresentingPosition(){
+        const float offsetDistance = 2.5f;
+        var targetPosition = transform.position; 
+
+        if(selectedExhibit.exhibitType == Exhibit.ExhibitType.Cabnet){
+            var direction = (selectedExhibit.transform.position - player.transform.position).normalized;
+            direction.y = 0;
+            targetPosition = selectedExhibit.transform.position + direction * offsetDistance;
+            targetPosition.y = this.transform.position.y;   
+        } 
+        else if(selectedExhibit.exhibitType == Exhibit.ExhibitType.Mural){
+            
+        }
+
+        return targetPosition; 
     }
 
     void Player_OnDidMove(Player caller, Vector3 position)
@@ -361,9 +376,9 @@ public class VPA : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(newDir);
     }
 
-    void SharedInstance_OnCabnetSelected(Cabnet caller)
+    void SharedInstance_OnCabnetSelected(Exhibit caller)
     {
-        this.selectedCabnet = caller;
+        this.selectedExhibit = caller;
         CurrentState = State.Presenting;
     }
 

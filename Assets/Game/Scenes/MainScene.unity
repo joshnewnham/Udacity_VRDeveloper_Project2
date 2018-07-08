@@ -1112,7 +1112,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 145855329}
-          m_MethodName: SelectCabnet
+          m_MethodName: SelectExhibit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1133,9 +1133,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 145855326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035a26226a0d3471a9eedffa63594f65, type: 3}
+  m_Script: {fileID: 11500000, guid: b0eedbafc4d864e1997a7beabdeb2a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exhibitType: 0
   selectDistanceThreshold: 2.5
   summaryDialog:
   - Social gaming is another compelling use-case for Social VR
@@ -3244,7 +3245,7 @@ BoxCollider:
   m_GameObject: {fileID: 487425298}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4539,7 +4540,7 @@ MeshCollider:
   m_GameObject: {fileID: 638220033}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -6961,7 +6962,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1041896785}
-          m_MethodName: SelectCabnet
+          m_MethodName: SelectExhibit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6982,9 +6983,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1041896782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035a26226a0d3471a9eedffa63594f65, type: 3}
+  m_Script: {fileID: 11500000, guid: b0eedbafc4d864e1997a7beabdeb2a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exhibitType: 0
   selectDistanceThreshold: 2.5
   summaryDialog:
   - Enjoying live events socially is an important value proposition for Social VR
@@ -7081,6 +7083,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1056869102}
+  - component: {fileID: 1056869105}
+  - component: {fileID: 1056869104}
+  - component: {fileID: 1056869103}
   m_Layer: 0
   m_Name: Mural_SecondLife
   m_TagString: Untagged
@@ -7103,6 +7108,72 @@ Transform:
   m_Father: {fileID: 121869299}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: -0.000015258789}
+--- !u!114 &1056869103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1056869101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1056869104}
+          m_MethodName: SelectExhibit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &1056869104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1056869101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0eedbafc4d864e1997a7beabdeb2a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exhibitType: 1
+  selectDistanceThreshold: 3.5
+  summaryDialog:
+  - Second Life is an online virtual world, developed and owned by Linden Lab and
+    launched on June 23, 2003.
+  - 'Second Life had approximately one million regular users and was similar to a
+    massively multiplayer online role-playing game but without an objective. '
+  - 'Second Life allowed and encouraged others to extend the worlds using external
+    editors. Markets were supported using virtual currencies. '
+  summaryAudio:
+  - {fileID: 8300000, guid: 5f54127f1a3534c25a56e8ffe0196007, type: 3}
+  - {fileID: 8300000, guid: 0e2d42728bce54929af545e84e65b28d, type: 3}
+  - {fileID: 8300000, guid: aaf78036973174cad8ac2ee137f6015f, type: 3}
+--- !u!65 &1056869105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1056869101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0312178, y: 1.8685675, z: 0.07630395}
+  m_Center: {x: 0.023936097, y: 0.9882548, z: -0.03098302}
 --- !u!1 &1064710889
 GameObject:
   m_ObjectHideFlags: 0
@@ -8196,7 +8267,7 @@ MeshCollider:
   m_GameObject: {fileID: 1205531257}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -8885,7 +8956,7 @@ BoxCollider:
   m_GameObject: {fileID: 1273810407}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -9605,7 +9676,7 @@ MeshCollider:
   m_GameObject: {fileID: 1367742593}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -9727,7 +9798,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1386646791}
-          m_MethodName: SelectCabnet
+          m_MethodName: SelectExhibit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9748,9 +9819,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1386646788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035a26226a0d3471a9eedffa63594f65, type: 3}
+  m_Script: {fileID: 11500000, guid: b0eedbafc4d864e1997a7beabdeb2a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exhibitType: 0
   selectDistanceThreshold: 2.5
   summaryDialog:
   - Virtual Reality is an ideal medium for socialising; some of the key characteristics
@@ -9913,8 +9985,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 28.696741, y: 1.4935472, z: 10.68827}
-  m_Center: {x: 0.3945415, y: -0.017768232, z: 3.5591593}
+  m_Size: {x: 28.696741, y: 0.8772991, z: 10.68827}
+  m_Center: {x: 0.3945415, y: -0.15933917, z: 3.559159}
 --- !u!1 &1440797213
 GameObject:
   m_ObjectHideFlags: 0
@@ -12034,6 +12106,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1952271356}
+  - component: {fileID: 1952271358}
+  - component: {fileID: 1952271357}
+  - component: {fileID: 1952271359}
   m_Layer: 0
   m_Name: Mural_FacebookSpaces
   m_TagString: Untagged
@@ -12056,6 +12131,73 @@ Transform:
   m_Father: {fileID: 121869299}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -180, y: 180, z: -0.000015258789}
+--- !u!114 &1952271357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952271355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0eedbafc4d864e1997a7beabdeb2a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exhibitType: 1
+  selectDistanceThreshold: 3.5
+  summaryDialog:
+  - Facebook Spaces is a place for you to hang out with friends and family in your
+    list and also meet with people from the Groups you're in
+  - Facebook Spaces starts with you creating a virtual identity that represents the
+    real you - this helps people recognize you and makes VR feel more like hanging
+    out in person
+  - After creating your identity; you can draw, play games, view content with friends
+    in VR as well as communicate with those outside of VR
+  summaryAudio:
+  - {fileID: 8300000, guid: 79627f1f0379b490ea2e1bcde9d93049, type: 3}
+  - {fileID: 8300000, guid: 2d16bac37b220487abdccd0db2cd2947, type: 3}
+  - {fileID: 8300000, guid: c7c34dcdd52624736803a30cbbedaac2, type: 3}
+--- !u!65 &1952271358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952271355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0312178, y: 1.8480525, z: 0.11775458}
+  m_Center: {x: 0.023936553, y: 0.9848329, z: -0.058132462}
+--- !u!114 &1952271359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952271355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1952271357}
+          m_MethodName: SelectExhibit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1965082089
 GameObject:
   m_ObjectHideFlags: 0
@@ -12771,7 +12913,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2048454296}
-          m_MethodName: SelectCabnet
+          m_MethodName: SelectExhibit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -12792,9 +12934,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2048454293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035a26226a0d3471a9eedffa63594f65, type: 3}
+  m_Script: {fileID: 11500000, guid: b0eedbafc4d864e1997a7beabdeb2a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exhibitType: 0
   selectDistanceThreshold: 2.5
   summaryDialog:
   - 'Virtual Reality makes it possible for you to explore different places or new
@@ -13014,7 +13157,7 @@ MeshCollider:
   m_GameObject: {fileID: 2071770977}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
